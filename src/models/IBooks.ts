@@ -5,6 +5,7 @@ export interface IBooks {
     title: string;
     subtitle: string;
     authors: [];
+    averageRating: number;
     pageCount: number;
     description: string;
     imageLinks: {
