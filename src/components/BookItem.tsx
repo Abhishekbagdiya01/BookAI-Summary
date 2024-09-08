@@ -2,11 +2,18 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import { IBooks } from "../models/IBooks";
 import Icon from "react-native-vector-icons/AntDesign";
+import { Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 const BookItem = (props: IBooks) => {
   const { id, volumeInfo } = props;
   const { title, subtitle, description, averageRating, pageCount, authors, imageLinks } = volumeInfo;
+  const navigation = useNavigation();
   return (
-    <View style={style.containter}>
+    <Pressable style={style.containter}
+      onPress={() => navigation.navigate('Book', {
+        bookId: id
+
+      })}>
       <Image style={style.image} source={{ uri: imageLinks?.thumbnail || 'https://images.unsplash.com/photo-1585896452649-6ede5e126800?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}></Image>
       <View style={style.info}>
         <Text style={style.text}>{title}</Text>
@@ -24,7 +31,7 @@ const BookItem = (props: IBooks) => {
         <Text style={style.pages}>{pageCount} page</Text>
         <Text style={style.description}>{description?.split(' ').slice(0, 50).join(' ') || 'N/A'} ... </Text>
       </View>
-    </View>
+    </Pressable>
   );
 }
 
