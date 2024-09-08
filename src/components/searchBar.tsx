@@ -36,7 +36,7 @@ const style = StyleSheet.create(
       justifyContent: 'center',
       borderRadius: 20,
       paddingHorizontal: 15,
-      backgroundColor: 'cyan'
+      backgroundColor: '#4ecdc4',
     },
     btnText: {
       fontWeight: 'bold',

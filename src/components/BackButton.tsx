@@ -6,13 +6,14 @@ export default function BackButton() {
   const navigation = useNavigation();
   return (
     <Pressable style={style.container} onPress={() => navigation.goBack()} >
-      <Icon name='chevron-back' size={24} color={'white'}></Icon>
+      <Icon name='chevron-back' size={30} color={'#4ecdc4'}></Icon>
     </Pressable>
   );
 }
 const style = StyleSheet.create({
   container: {
-    paddingLeft: 10, paddingTop: 45, paddingRight: 10,
+    paddingTop: 10,
+    backgroundColor: '#292f36',
     alignSelf: 'flex-start'
   },
 })

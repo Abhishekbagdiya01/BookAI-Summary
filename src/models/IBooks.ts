@@ -11,6 +11,10 @@ export interface IBooks {
     imageLinks: {
       thumbnail: string;
     }
+    categories: string[];
+    publisher: string;
+    publishedDate: string;
+    previewLink: string;
   }
 
 }
