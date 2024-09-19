@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, ActivityIndicator } from 'react-native'
+import { Text, View, StyleSheet, ActivityIndicator, ScrollView } from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native'
 import useBook from '../hooks/useBook';
@@ -28,47 +28,54 @@ const BookScreen = () => {
         <BackButton></BackButton>
         <Text style={style.title}>{bookInfo?.title}</Text>
       </View>
-      <View style={style.imageView}>
-        <Image source={{ uri: bookInfo?.imageLinks.thumbnail }} style={style.image}></Image>
-        <Text style={style.authers} >{bookInfo?.authors.join(', ')}</Text>
-      </View>
-      {bookInfo?.categories.map((category, index) => <Text style={style.category}>
-        {category}
-      </Text>)}
-      <View style={style.tile}>
-        <View style={style.ratingContainer}>
-          <Icon name="star" color="yellow" size={20}></Icon>
-          <Text style={style.tileText} >{
-            bookInfo?.averageRating || ""
-          }</Text>
-        </View>
-        <Text style={style.tileText} >{
-          bookInfo?.pageCount || ""
-        } pages</Text>
-      </View>
 
-      <Pressable style={style.aiBtn} onPress={() => navigation.navigate('Summery', {
-        title: bookInfo?.title,
-        auther: bookInfo?.authors,
-      })}>
-        <Text style={style.aiBtnText}>AI Summery</Text>
-      </Pressable>
-      <RenderHTML
-        contentWidth={300}
-        source={{
-          html: bookInfo?.description,
-        }}
-        tagsStyles={
-          {
-            body: {
-              color: 'white',
+      <ScrollView contentContainerStyle={style.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={style.imageView}>
+          <Image source={{ uri: bookInfo?.imageLinks.thumbnail }} style={style.image}></Image>
+          <Text style={style.authers} >{bookInfo?.authors.join(', ')}</Text>
+        </View>
+        {
+          bookInfo?.categories.map((category, index) => <Text style={style.category}>
+            {category}
+          </Text>)
+        }
+        <View style={style.tile}>
+          <View style={style.ratingContainer}>
+            <Icon name="star" color="yellow" size={20}></Icon>
+            <Text style={style.tileText} >{
+              bookInfo?.averageRating || ""
+            }</Text>
+          </View>
+          <Text style={style.tileText} >{
+            bookInfo?.pageCount || ""
+          } pages</Text>
+        </View>
+
+        <Pressable style={style.aiBtn} onPress={() => navigation.navigate('Summery', {
+          title: bookInfo?.title,
+          authors: bookInfo?.authors,
+        })}>
+          <Text style={style.aiBtnText}>AI Summery</Text>
+        </Pressable>
+        <RenderHTML
+          contentWidth={300}
+          source={{
+            html: bookInfo?.description,
+          }}
+          tagsStyles={
+            {
+              body: {
+                color: 'white',
+              }
             }
           }
-        }
 
-      ></RenderHTML>
+        ></RenderHTML>
 
-    </View>
+      </ScrollView>
+    </View >
   )
 }
 
@@ -89,6 +96,9 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center'
   },
+  scrollView: {
+    gap: 10,
+  },
   imageView: {
     display: 'flex',
     justifyContent: 'center',
@@ -99,7 +109,7 @@ const style = StyleSheet.create({
     borderRadius: 10,
     height: 280,
     width: 300,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   tile: {
     flexDirection: 'row',
@@ -112,7 +122,6 @@ const style = StyleSheet.create({
     borderRadius: 15,
     fontSize: 13,
     color: '#4ecdc4',
-
   },
   tileText: {
     color: 'white',
