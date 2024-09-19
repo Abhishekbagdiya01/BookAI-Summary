@@ -7,6 +7,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BookScreen from "./src/screens/BookScreen";
+import BookSummeryScreen from "./src/screens/BookSummeryScreen";
 const queryClient = new QueryClient();
 const Stack = createNativeStackNavigator();
 const app = () => {
@@ -17,6 +18,7 @@ const app = () => {
       }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Book" component={BookScreen} />
+        <Stack.Screen name="Summery" component={BookSummeryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   </QueryClientProvider>

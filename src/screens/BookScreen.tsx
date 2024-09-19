@@ -6,7 +6,8 @@ import BackButton from '../components/BackButton';
 import { Image } from 'react-native';
 import Icon from "react-native-vector-icons/AntDesign";
 import RenderHTML from 'react-native-render-html';
-
+import { Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 const BookScreen = () => {
   const route = useRoute();
   const { bookId } = route?.params;
@@ -18,6 +19,7 @@ const BookScreen = () => {
 
     <Text>error</Text>
   }
+  const navigation = useNavigation();
   console.log(data);
   const bookInfo = data?.volumeInfo;
   return (
@@ -27,7 +29,7 @@ const BookScreen = () => {
         <Text style={style.title}>{bookInfo?.title}</Text>
       </View>
       <View style={style.imageView}>
-        <Image source={{ uri: bookInfo?.imageLinks.thumbnail || 'https://images.unsplash.com/photo-1585896452649-6ede5e126800?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }} style={style.image}></Image>
+        <Image source={{ uri: bookInfo?.imageLinks.thumbnail }} style={style.image}></Image>
         <Text style={style.authers} >{bookInfo?.authors.join(', ')}</Text>
       </View>
       {bookInfo?.categories.map((category, index) => <Text style={style.category}>
@@ -44,6 +46,13 @@ const BookScreen = () => {
           bookInfo?.pageCount || ""
         } pages</Text>
       </View>
+
+      <Pressable style={style.aiBtn} onPress={() => navigation.navigate('Summery', {
+        title: bookInfo?.title,
+        auther: bookInfo?.authors,
+      })}>
+        <Text style={style.aiBtnText}>AI Summery</Text>
+      </Pressable>
       <RenderHTML
         contentWidth={300}
         source={{
@@ -58,6 +67,7 @@ const BookScreen = () => {
         }
 
       ></RenderHTML>
+
     </View>
   )
 }
@@ -125,7 +135,18 @@ const style = StyleSheet.create({
     borderRadius: 15,
     fontSize: 13,
     color: '#4ecdc4',
-  }
+  },
+  aiBtn: {
+    borderWidth: 1,
+    borderColor: '#4ecdc4',
+    borderRadius: 15,
+    alignSelf: 'flex-start'
+  },
+  aiBtnText: {
+    padding: 10,
+    color: 'white',
+    fontSize: 20,
+  },
 
 })
 
