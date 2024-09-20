@@ -16,6 +16,15 @@
 - **React Navigation** - Provides smooth navigation between screens.
 - **Google Generative AI** - Powers the book summary generation with AI-driven insights.
 
+### Screenshots
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_search_clean_code.png" />
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_info_clean_code.png" />
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_ai_summery_clean_code.png" />
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_search_art_of_war.png" />
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_info_war.png" />
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_ai_summery_war.png" />
+
+
 ## Installation
 
 To get started with **BookAI Summary**, follow these steps:
