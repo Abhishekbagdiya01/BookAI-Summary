@@ -17,13 +17,20 @@
 - **Google Generative AI** - Powers the book summary generation with AI-driven insights.
 
 ### Screenshots
-<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_search_clean_code.png" />
-<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_info_clean_code.png" />
-<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_ai_summery_clean_code.png" />
-<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_search_art_of_war.png" />
-<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_info_war.png" />
-<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_ai_summery_war.png" />
 
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_search_clean_code.png" width="30%" height="30%"/>
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_info_clean_code.png" width="30%" height="30%"/>
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_ai_summery_clean_code.png" width="30%" height="30%"/>
+
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_search_art_of_war.png" width="30%" height="30%"/>
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_info_war.png" width="30%" height="30%"/>
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_ai_summery_war.png" width="30%" height="30%"/>
+
+<img src="https://github.com/Abhishekbagdiya01/BookAI-Summary/blob/main/screenshots/book_search_jojo.png" width="30%" height="30%"/>
+
+</div>
 
 ## Installation
 
