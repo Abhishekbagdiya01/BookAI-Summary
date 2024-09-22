@@ -40,6 +40,11 @@ To get started with **BookAI Summary**, follow these steps:
    ```bash
    git clone https://github.com/Abhishekbagdiya01/BookAI-Summary.git
    cd BookAi-Summary
+ **Install dependency:**
+'''bash
    npm install
+
+ **Start the app:**
+```bash
    npx expo start
 
